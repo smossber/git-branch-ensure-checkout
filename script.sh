@@ -4,6 +4,7 @@
 set -e
 
 puppet_environment_directory="./puppet-environments/"
+git_repo="git@github.com:smossber/git-branch-ensure-checkout.git"
 
 # Check if the ref directory already exists
 if [[ -d ${puppet_environment_directory}ref/ ]]; then
@@ -18,7 +19,7 @@ else
 	mkdir -p ${puppet_environment_directory}
 	
 	echo "Check out the ref directory"
-	git clone git@github.com:smossber/git-branch-ensure-checkout.git ${puppet_environment_directory}ref/
+	git clone ${git_repo} ${puppet_environment_directory}ref/
 fi
 	
 
